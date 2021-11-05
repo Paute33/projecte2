@@ -1,0 +1,73 @@
+<style>
+  .imgindex {
+    height: 420;
+  }
+</style>
+<main class="flex-shrink-0 mb-5 mt-4">
+  <div class="container">
+    <div class="p-5 rounded">
+    </div>
+  </div>
+  <h2>Serveis</h2>
+
+  <div class="row row-cols-1 row-cols-md-3 g-3" style="">
+    {{#if servicios_db}}
+    {{#each servicios_db}}
+
+    <div class="col">
+      <div class="card">
+        <img src="assets/img/{{foto}}" class="card-img-top imgindex" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{title}}</h5>
+          <p class="card-text">
+            {{desc}}
+            <br /><br />
+            <b>Preu:</b>
+            {{precio}}€
+          </p>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+    {{else}}
+    <p>Cap servei encara.</p>
+    {{/if}}
+
+  </div>
+
+  <br /><br /><br />
+  <a href="/servicios">
+    <input type="button" value="Més serveis" class="btn btn-primary float-right" />
+  </a>
+  <br /><br />
+  <h2>Productes:</h2>
+  <div class="row row-cols-1 row-cols-md-3 g-3">
+    {{#if products}}
+    {{#each products}}
+
+    <div class="col">
+      <div class="card">
+        <img src="assets/img/{{foto}}" class="card-img-top imgindex" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{title}}</h5>
+          <p class="card-text">
+            {{desc}}
+            <br /><br />
+            <b>Preu:</b>
+            {{precio}}€
+          </p>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+    {{else}}
+    <p>Cap producte encara.</p>
+    {{/if}}
+
+  </div>
+  <br />
+  <a href="/catalogo">
+    <input type="button" value="Més postres" class="btn btn-primary float-right" />
+  </a>
+
+</main>
